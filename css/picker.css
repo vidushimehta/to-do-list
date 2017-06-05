@@ -1,0 +1,13 @@
+.container {
+	padding: 10px 30px;
+	margin-top: 130px;
+}
+.card {
+	height: 300px;
+}
+input[type=range] {
+	margin: 38px 0 0 !important;
+}
+input[type=text] {
+	margin-bottom: 0 !important;
+}
