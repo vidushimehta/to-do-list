@@ -1,0 +1,90 @@
+.container {
+  padding: 10px 30px;
+  margin-top: 130px;
+}
+input[type=text] {
+  background: white;
+  border: none;
+  width: 90%;
+  margin: 30px auto 0;
+  display: block;
+  padding: 5px 10px;
+  font-size: 20px;
+}
+li {
+  padding: 12px 8px 12px 40px;
+  background: #ffcdd2;
+  width: 90%;
+  margin: auto;
+  display: block;
+  font-size: 20px;
+  position: relative;
+}
+ul#test {
+  width: 100%;
+  display: inline-block;
+  margin-top: 0;
+}
+ul li:nth-child(2n+1) {
+  background: #fce4ec;
+}
+button {
+  float: right;
+}
+button {
+  background: transparent;
+  border: none;
+  color: transparent;
+  position: relative;
+}
+button#delete:after {
+    content: "x";
+    position: absolute;
+    color: black;
+    left: 10px;
+    background: none;
+}
+button:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  background: url("../images/edit-icon.png"); 
+  height: 20px;
+  width: 40px;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  top: 5px;
+}
+li.checked button#delete:after {
+  color: white;
+  background: none;
+}
+li.checked button:after {
+  background: url("../images/edit-icon-white.png"); 
+  background-size: 20px;
+  background-repeat: no-repeat;
+}
+button:focus {
+  background: transparent;
+}
+
+ul li.checked {
+    background: #b2dfdb;
+    color: #fff;
+    text-decoration: line-through;
+}
+ul li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 18px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+}
+[contenteditable]:focus {
+    outline: 0px solid transparent;
+}
