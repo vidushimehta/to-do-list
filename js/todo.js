@@ -1,9 +1,14 @@
+ var theList = [];
 //Add value to the list
 function addValue() {
 
 	var inputValue = document.getElementById('data').value;
+	//var inputStorage = localStorage.setItem("todos",inputValue);
+	//console.log( "todos = " + localStorage.getItem("todos"));
+	//createSpan.innerHTML = localStorage.getItem("todos"));
 	if(inputValue) {
 		var createli = document.createElement('LI');
+		
 		createli.setAttribute('id', 'list')
 		var randomId = createli.children.length+1
 		var createSpan = document.createElement('span');
@@ -12,11 +17,19 @@ function addValue() {
 		createli.appendChild(createSpan);
 		var createtext = document.createTextNode(inputValue);
 		// createli.appendChild(createtext);
+		
 
 		createSpan.appendChild(createtext);
 		console.log(createli);
 		var divmain = document.getElementById('test');
 		divmain.appendChild(createli);
+
+		//Storing todo
+		theList.push(inputValue);
+		localStorage.setItem("storedValue", JSON.stringify(theList)); 
+		var storedTodoList = JSON.parse(localStorage.getItem("storedValue"));
+		console.log(theList);
+		console.log(storedTodoList);
 
 	 	document.getElementById('data').value = '';
 	 
@@ -27,9 +40,8 @@ function addValue() {
 	else
 	{
 		alert("please add a task")
-	}		
-
-	return false;
+	}	
+	return false;	
 }
 
 //Add checked class to li
